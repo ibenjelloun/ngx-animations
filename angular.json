@@ -1,0 +1,174 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "ngx-animations-demo": {
+      "root": "apps/ngx-animations-demo/",
+      "sourceRoot": "apps/ngx-animations-demo/src",
+      "projectType": "application",
+      "prefix": "apps",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ngx-animations-demo",
+            "index": "apps/ngx-animations-demo/src/index.html",
+            "main": "apps/ngx-animations-demo/src/main.ts",
+            "polyfills": "apps/ngx-animations-demo/src/polyfills.ts",
+            "tsConfig": "apps/ngx-animations-demo/tsconfig.app.json",
+            "assets": [
+              "apps/ngx-animations-demo/src/favicon.ico",
+              "apps/ngx-animations-demo/src/assets"
+            ],
+            "styles": [
+              "apps/ngx-animations-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngx-animations-demo/src/environments/environment.ts",
+                  "with": "apps/ngx-animations-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-animations-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-animations-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-animations-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/ngx-animations-demo/src/test.ts",
+            "polyfills": "apps/ngx-animations-demo/src/polyfills.ts",
+            "tsConfig": "apps/ngx-animations-demo/tsconfig.spec.json",
+            "karmaConfig": "apps/ngx-animations-demo/karma.conf.js",
+            "styles": [
+              "apps/ngx-animations-demo/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/ngx-animations-demo/src/favicon.ico",
+              "apps/ngx-animations-demo/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ngx-animations-demo/tsconfig.app.json",
+              "apps/ngx-animations-demo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-animations-demo-e2e": {
+      "root": "apps/ngx-animations-demo-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/ngx-animations-demo-e2e/protractor.conf.js",
+            "devServerTarget": "ngx-animations-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-animations-demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/ngx-animations-demo-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-animations": {
+      "root": "libs/ngx-animations",
+      "sourceRoot": "libs/ngx-animations/src",
+      "projectType": "library",
+      "prefix": "libs/ngx-animations-demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ngx-animations/tsconfig.lib.json",
+            "project": "libs/ngx-animations/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "libs/ngx-animations/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ngx-animations/src/test.ts",
+            "tsConfig": "libs/ngx-animations/tsconfig.spec.json",
+            "karmaConfig": "libs/ngx-animations/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ngx-animations/tsconfig.lib.json",
+              "libs/ngx-animations/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "defaultProject": "ngx-animations-demo"
+}

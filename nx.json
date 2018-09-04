@@ -1,0 +1,21 @@
+{
+  "npmScope": "ngx-animations-demo",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "ngx-animations-demo": {
+      "tags": []
+    },
+    "ngx-animations-demo-e2e": {
+      "tags": []
+    },
+    "ngx-animations": {
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="commands-container">
+  <select [(ngModel)]="animation">
+    <option *ngFor="let a of animationsNames" [value]="a">{{a}}</option>
+  </select>
+  <button (click)="animate()">Animate</button>
+</div>
+<div class="container">
+  <div #cube class="cube"></div>
+</div>
