@@ -1,44 +1,134 @@
-# NgxAnimationsDemo
+# NgxAnimations
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
+This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-## Nrwl Extensions for Angular (Nx)
+[You can find a Demo here.](https://stackblitz.com/edit/ngx-animations)
 
-<a href="https://nrwl.io/nx"><img src="https://preview.ibb.co/mW6sdw/nx_logo.png"></a>
+## Quick Start
 
-Nx is an open source toolkit for enterprise Angular applications.
+First import the `BrowserAnimationsModule` and `NgxAnimationsModule` :
 
-Nx is designed to help you create and build enterprise grade Angular applications. It provides an opinionated approach to application project structure and patterns.
+```
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAnimationsModule } from 'ngx-animations';
+...
 
-## Quick Start & Documentation
+@NgModule({
+  imports:      [ BrowserAnimationsModule, NgxAnimationsModule ],
+  ...
+})
+```
 
-[Watch a 5-minute video on how to get started with Nx.](http://nrwl.io/nx)
+Then in your component :
 
-## Generate your first application
+- Import the desired animation and the AnimationsService :
 
-Run `ng generate app myapp` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace. Read more [here](http://nrwl.io/nx).
+```
+import { fadeIn, AnimationsService } from 'ngx-animations';
+```
 
-## Development server
+- Get your element using the `@ViewChild` annotation :
 
-Run `ng serve --project=myapp` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+@ViewChild('element') element: ElementRef;
+```
 
-## Code scaffolding
+Inject the `AnimationsService` :
 
-Run `ng generate component component-name --project=myapp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+constructor(private animationsService: AnimationsService) {}
+```
 
-## Build
+After that you can create the player :
 
-Run `ng build --project=myapp` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+const player = this.animationsService.create(fadeIn(300), this.element.nativeElement);
+```
 
-## Running unit tests
+And play the animation :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+player.play();
+```
 
-## Running end-to-end tests
+## List of animations
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- bounce
+- flash
+- pulse
+- rubberBand
+- shake
+- swing
+- tada
+- wobble
+- jello
+- bounceIn
+- bounceInDown
+- bounceInLeft
+- bounceInRight
+- bounceInUp
+- bounceOut
+- bounceOutDown
+- bounceOutLeft
+- bounceOutRight
+- bounceOutUp
+- fadeIn
+- fadeInDown
+- fadeInDownBig
+- fadeInLeft
+- fadeInLeftBig
+- fadeInRight
+- fadeInRightBig
+- fadeInUp
+- fadeInUpBig
+- fadeOut
+- fadeOutDown
+- fadeOutDownBig
+- fadeOutLeft
+- fadeOutLeftBig
+- fadeOutRight
+- fadeOutRightBig
+- fadeOutUp
+- fadeOutUpBig
+- flip
+- flipInX
+- flipInY
+- flipOutX
+- flipOutY
+- lightSpeedIn
+- lightSpeedOut
+- rotateIn
+- rotateInDownLeft
+- rotateInDownRight
+- rotateInUpLeft
+- rotateInUpRight
+- rotateOut
+- rotateOutDownLeft
+- rotateOutDownRight
+- rotateOutUpLeft
+- rotateOutUpRight
+- slideInUp
+- slideInDown
+- slideInLeft
+- slideInRight
+- slideOutUp
+- slideOutDown
+- slideOutLeft
+- slideOutRight
+- zoomIn
+- zoomInDown
+- zoomInLeft
+- zoomInRight
+- zoomInUp
+- zoomOut
+- zoomOutDown
+- zoomOutLeft
+- zoomOutRight
+- zoomOutUp
+- hinge
+- jackInTheBox
+- rollIn
+- rollOut
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
