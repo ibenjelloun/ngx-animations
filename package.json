@@ -1,11 +1,16 @@
 {
   "name": "ngx-animations-demo",
   "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "animations",
+    "angular"
+  ],
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-animations",
+    "build": "ng build ngx-animations && cp README.md ./dist/libs/ngx-animations/README.md",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",

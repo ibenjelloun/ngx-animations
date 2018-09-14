@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ngx-animations-demo",
+      "anim",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ngx-animations-demo",
+      "anim",
       "kebab-case"
     ]
   }

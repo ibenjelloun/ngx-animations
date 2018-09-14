@@ -1,6 +1,11 @@
 {
   "name": "ngx-animations",
-  "version": "0.0.2",
+  "version": "0.0.5",
+  "description": "An adaptation of Animate.css using @angular/animations",
+  "keywords": [
+    "animations",
+    "angular"
+  ],
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"

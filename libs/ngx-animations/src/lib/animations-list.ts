@@ -75,9 +75,10 @@ import {
   jackInTheBox,
   rollIn,
   rollOut
-} from 'ngx-animations';
+} from './animations';
+import { AnimationStyleMetadata, AnimationAnimateMetadata } from '@angular/animations';
 
-export function getAnimations(): any[] {
+export function getAnimations(): ((time: number) => (AnimationStyleMetadata | AnimationAnimateMetadata)[])[] {
   const animations = [];
 
   animations['bounce'] = bounce;

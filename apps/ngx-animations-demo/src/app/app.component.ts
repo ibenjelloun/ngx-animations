@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AnimationsService } from 'ngx-animations';
-import { getAnimations } from './animations';
+import { AnimationsService, getAnimations } from 'ngx-animations';
 import { timer } from 'rxjs';
 
 @Component({
@@ -14,6 +13,7 @@ export class AppComponent {
   animations;
   animationsNames;
   animation = 'fadeIn';
+  show = true;
 
   constructor(private animationsService: AnimationsService) {
     this.animations = getAnimations();

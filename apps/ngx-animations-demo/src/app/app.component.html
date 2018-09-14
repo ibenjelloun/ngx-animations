@@ -3,7 +3,9 @@
     <option *ngFor="let a of animationsNames" [value]="a">{{a}}</option>
   </select>
   <button (click)="animate()">Animate</button>
+  <button (click)="show = !show">Show/Hide</button>
 </div>
 <div class="container">
   <div #cube class="cube"></div>
+  <div class="cube" animStart="rubberBand" [time]="2000" *ngIf="show"></div>
 </div>
