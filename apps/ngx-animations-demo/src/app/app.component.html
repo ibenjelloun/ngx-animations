@@ -7,5 +7,5 @@
 </div>
 <div class="container">
   <div #cube class="cube"></div>
-  <div class="cube" animStart="rubberBand" [time]="2000" *ngIf="show"></div>
+  <div *animIf="show; info: { startAnim: 'fadeIn', endAnim: 'fadeOut', time: 1000 }" class="cube"></div>
 </div>

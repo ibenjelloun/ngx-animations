@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimationsService } from './animations.service';
-import { StartAnimationDirective } from './directives/start-animation';
-import { EndAnimationDirective } from './directives/end-animation';
+import { AnimIfDirective } from './directives/if-animation';
+
 @NgModule({
-  declarations: [StartAnimationDirective, EndAnimationDirective],
+  declarations: [AnimIfDirective],
   imports: [CommonModule],
   providers: [AnimationsService],
-  exports: [StartAnimationDirective, EndAnimationDirective]
+  exports: [AnimIfDirective]
 })
 export class NgxAnimationsModule {}
