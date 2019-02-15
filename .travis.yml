@@ -7,7 +7,6 @@ branches:
 before_script:
   - yarn global add @angular/cli
 script:
-  - yarn test
   - yarn build
 
 notifications:
