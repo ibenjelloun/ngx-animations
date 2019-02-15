@@ -1,11 +1,20 @@
 <div class="commands-container">
-  <select [(ngModel)]="animation">
-    <option *ngFor="let a of animationsNames" [value]="a">{{a}}</option>
+  <select [(ngModel)]="animation" (ngModelChange)="animate()">
+    <option *ngFor="let a of animationsNames" [value]="a">{{ a }}</option>
   </select>
   <button (click)="animate()">Animate</button>
+</div>
+<div class="container"><div #cube class="cube"></div></div>
+
+<div class="commands-container">
   <button (click)="show = !show">Show/Hide</button>
 </div>
 <div class="container">
-  <div #cube class="cube"></div>
-  <div *animIf="show; info: { startAnim: 'fadeIn', endAnim: 'fadeOut', time: 1000 }" class="cube"></div>
+  <div
+    *animIf="
+      show;
+      info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }
+    "
+    class="cube"
+  ></div>
 </div>

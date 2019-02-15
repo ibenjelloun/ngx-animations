@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/ibenjelloun/ngx-animations.svg?branch=master)](https://travis-ci.org/ibenjelloun/ngx-animations)
+
+[![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
+
+[![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
+
 # NgxAnimations
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
@@ -129,6 +135,3 @@ player.play();
 - jackInTheBox
 - rollIn
 - rollOut
-
-
-

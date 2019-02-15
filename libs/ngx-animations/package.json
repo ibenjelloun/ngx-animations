@@ -1,6 +1,6 @@
 {
   "name": "ngx-animations",
-  "version": "0.0.7-beta.0",
+  "version": "1.0.0-beta.0",
   "description": "An adaptation of Animate.css using @angular/animations",
   "keywords": [
     "animations",

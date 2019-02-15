@@ -7,11 +7,17 @@
 .container {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 20px);
 }
 
 .cube {
   width: 200px;
   height: 200px;
   background-color: #e74c3c;
+}
+
+.cube-2 {
+  margin-left: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #2ecc71;
 }

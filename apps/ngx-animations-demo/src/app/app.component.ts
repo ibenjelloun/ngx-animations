@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AnimationsService, getAnimations } from 'ngx-animations';
+import { AnimationsService, animations } from 'ngx-animations';
 import { timer } from 'rxjs';
 
 @Component({
@@ -8,7 +8,6 @@ import { timer } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   @ViewChild('cube') cube: ElementRef;
   animations;
   animationsNames;
@@ -16,17 +15,19 @@ export class AppComponent {
   show = true;
 
   constructor(private animationsService: AnimationsService) {
-    this.animations = getAnimations();
+    this.animations = animations;
     this.animationsNames = Object.keys(this.animations);
   }
 
   animate() {
-    const player = this.animationsService.create(this.animations[this.animation](300), this.cube.nativeElement);
+    const player = this.animationsService.create(
+      this.animations[this.animation](300),
+      this.cube.nativeElement
+    );
     player.play();
     player.onDone(async function() {
       await timer(500).toPromise();
       player.reset();
     });
   }
-
 }

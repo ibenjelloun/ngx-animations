@@ -5,9 +5,9 @@ import {
   TemplateRef,
   EmbeddedViewRef
 } from '@angular/core';
-import { AnimationsService } from '../animations.service';
-import { getAnimations } from '../animations-list';
-import { timer, from } from 'rxjs';
+import { AnimationsService } from '../services/animations.service';
+import { animations } from '../model/animations-list';
+import { timer } from 'rxjs';
 
 @Directive({
   selector: '[animIf]'
@@ -23,7 +23,7 @@ export class AnimIfDirective {
     private viewContainer: ViewContainerRef,
     private animationsService: AnimationsService
   ) {
-    this.animations = getAnimations();
+    this.animations = animations;
   }
 
   @Input()
@@ -31,22 +31,33 @@ export class AnimIfDirective {
     this.viewContainer.clear();
     this.viewContainer.createEmbeddedView(this.templateRef);
     if (show) {
-      const player = this.animationsService.create(
-        this.animations[this.animIfInfo.startAnim](this.animIfInfo.time),
-        (this.viewContainer.get(0) as EmbeddedViewRef<any>).rootNodes[0]
+      const player = this.createPlayer(
+        this.animIfInfo.startAnim,
+        this.animIfInfo.time
       );
       player.play();
       this.shownBefore = true;
     } else if (this.shownBefore) {
-      const player = this.animationsService.create(
-        this.animations[this.animIfInfo.endAnim](this.animIfInfo.time),
-        (this.viewContainer.get(0) as EmbeddedViewRef<any>).rootNodes[0]
+      const player = this.createPlayer(
+        this.animIfInfo.endAnim,
+        this.animIfInfo.time
       );
       player.play();
-      timer(this.animIfInfo.time).subscribe(() => {
-        this.viewContainer.clear();
-      });
+      this.clearAfterTime(this.viewContainer, this.animIfInfo.time);
       this.shownBefore = false;
     }
+  }
+
+  private createPlayer(animation: string, time: number) {
+    return this.animationsService.create(
+      this.animations[animation](time),
+      (this.viewContainer.get(0) as EmbeddedViewRef<any>).rootNodes[0]
+    );
+  }
+
+  private clearAfterTime(viewContainer: ViewContainerRef, time: number) {
+    timer(time).subscribe(() => {
+      viewContainer.clear();
+    });
   }
 }
