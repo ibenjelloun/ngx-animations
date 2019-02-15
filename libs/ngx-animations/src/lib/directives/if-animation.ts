@@ -15,16 +15,13 @@ import { timer } from 'rxjs';
 export class AnimIfDirective {
   @Input()
   animIfInfo: { startAnim: string; endAnim: string; time: number };
-  animations;
   shownBefore = false;
 
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
     private animationsService: AnimationsService
-  ) {
-    this.animations = animations;
-  }
+  ) {}
 
   @Input()
   set animIf(show: boolean) {
@@ -50,7 +47,7 @@ export class AnimIfDirective {
 
   private createPlayer(animation: string, time: number) {
     return this.animationsService.create(
-      this.animations[animation](time),
+      animations[animation](time),
       (this.viewContainer.get(0) as EmbeddedViewRef<any>).rootNodes[0]
     );
   }

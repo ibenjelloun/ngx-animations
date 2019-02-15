@@ -23,6 +23,14 @@ import { NgxAnimationsModule } from 'ngx-animations';
 })
 ```
 
+Use the `*animIf` directive to set the start and end animation :
+
+```
+ <div *animIf="show; info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }"></div>
+```
+
+## Control animations from typescript
+
 Then in your component :
 
 - Import the desired animation and the AnimationsService :
