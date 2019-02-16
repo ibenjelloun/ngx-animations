@@ -34,13 +34,13 @@ Use the `*animIf` directive to set the start and end animation :
 
 Then in your component :
 
-* Import the desired animation and the AnimationsService :
+Import the desired animation and the AnimationsService :
 
 ```typescript
 import { fadeIn, AnimationsService } from 'ngx*animations';
 ```
 
-* Get your element using the `@ViewChild` annotation :
+Get your element using the `@ViewChild` annotation :
 
 ```typescript
 @ViewChild('element') element: ElementRef;
@@ -55,7 +55,10 @@ constructor(private animationsService: AnimationsService) {}
 After that you can create the player :
 
 ```typescript
-const player = this.animationsService.create(fadeIn(300), this.element.nativeElement);
+const player = this.animationsService.create(
+  fadeIn(300),
+  this.element.nativeElement
+);
 ```
 
 And play the animation :
@@ -66,79 +69,79 @@ player.play();
 
 ## List of animations
 
-* bounce
-* flash
-* pulse
-* rubberBand
-* shake
-* swing
-* tada
-* wobble
-* jello
-* bounceIn
-* bounceInDown
-* bounceInLeft
-* bounceInRight
-* bounceInUp
-* bounceOut
-* bounceOutDown
-* bounceOutLeft
-* bounceOutRight
-* bounceOutUp
-* fadeIn
-* fadeInDown
-* fadeInDownBig
-* fadeInLeft
-* fadeInLeftBig
-* fadeInRight
-* fadeInRightBig
-* fadeInUp
-* fadeInUpBig
-* fadeOut
-* fadeOutDown
-* fadeOutDownBig
-* fadeOutLeft
-* fadeOutLeftBig
-* fadeOutRight
-* fadeOutRightBig
-* fadeOutUp
-* fadeOutUpBig
-* flip
-* flipInX
-* flipInY
-* flipOutX
-* flipOutY
-* lightSpeedIn
-* lightSpeedOut
-* rotateIn
-* rotateInDownLeft
-* rotateInDownRight
-* rotateInUpLeft
-* rotateInUpRight
-* rotateOut
-* rotateOutDownLeft
-* rotateOutDownRight
-* rotateOutUpLeft
-* rotateOutUpRight
-* slideInUp
-* slideInDown
-* slideInLeft
-* slideInRight
-* slideOutUp
-* slideOutDown
-* slideOutLeft
-* slideOutRight
-* zoomIn
-* zoomInDown
-* zoomInLeft
-* zoomInRight
-* zoomInUp
-* zoomOut
-* zoomOutDown
-* zoomOutLeft
-* zoomOutRight
-* zoomOutUp
-* hinge
-* jackInTheBox
-* rollIn
-* rollOut
+-  bounce
+-  flash
+-  pulse
+-  rubberBand
+-  shake
+-  swing
+-  tada
+-  wobble
+-  jello
+-  bounceIn
+-  bounceInDown
+-  bounceInLeft
+-  bounceInRight
+-  bounceInUp
+-  bounceOut
+-  bounceOutDown
+-  bounceOutLeft
+-  bounceOutRight
+-  bounceOutUp
+-  fadeIn
+-  fadeInDown
+-  fadeInDownBig
+-  fadeInLeft
+-  fadeInLeftBig
+-  fadeInRight
+-  fadeInRightBig
+-  fadeInUp
+-  fadeInUpBig
+-  fadeOut
+-  fadeOutDown
+-  fadeOutDownBig
+-  fadeOutLeft
+-  fadeOutLeftBig
+-  fadeOutRight
+-  fadeOutRightBig
+-  fadeOutUp
+-  fadeOutUpBig
+-  flip
+-  flipInX
+-  flipInY
+-  flipOutX
+-  flipOutY
+-  lightSpeedIn
+-  lightSpeedOut
+-  rotateIn
+-  rotateInDownLeft
+-  rotateInDownRight
+-  rotateInUpLeft
+-  rotateInUpRight
+-  rotateOut
+-  rotateOutDownLeft
+-  rotateOutDownRight
+-  rotateOutUpLeft
+-  rotateOutUpRight
+-  slideInUp
+-  slideInDown
+-  slideInLeft
+-  slideInRight
+-  slideOutUp
+-  slideOutDown
+-  slideOutLeft
+-  slideOutRight
+-  zoomIn
+-  zoomInDown
+-  zoomInLeft
+-  zoomInRight
+-  zoomInUp
+-  zoomOut
+-  zoomOutDown
+-  zoomOutLeft
+-  zoomOutRight
+-  zoomOutUp
+-  hinge
+-  jackInTheBox
+-  rollIn
+-  rollOut
