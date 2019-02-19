@@ -18,3 +18,16 @@
     class="cube"
   ></div>
 </div>
+
+<div class="commands-container">
+  <button (click)="theCube.animate()">
+    Animate
+  </button>
+</div>
+<div class="container">
+  <div
+    #theCube="animated"
+    [animAted]="{ time: 300, animation: 'bounceIn' }"
+    class="cube"
+  ></div>
+</div>
