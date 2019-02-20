@@ -1,18 +1,16 @@
 language: node_js
 node_js:
-  - '8.9'
+  - 10
 branches:
   only:
     - master
 before_script:
-  - yarn global add @angular/cli
+  - yarn global add @angular/cli codecov
 script:
   - yarn build
   - yarn test-headless
-before_intall:
-  - pip install --user codecov
 after_success:
-  - codecov
+  - codecov -f coverage/*.json -t $CODECOV_TOKEN
 notifications:
   email:
     on_failure: change
