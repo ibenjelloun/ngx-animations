@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/ibenjelloun/ngx-animations.svg?branch=master)](https://travis-ci.org/ibenjelloun/ngx-animations)
 [![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
 [![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
+[![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg)](https://snyk.io/test/github/ibenjelloun/ngx-animations)
 
 # NgxAnimations
 

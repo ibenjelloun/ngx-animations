@@ -29,7 +29,7 @@ module.exports = () => {
     },
     coverageReporter: {
       type: 'lcov',
-      dir: 'coverage/'
+      dir: '../../coverage/'
     },
     reporters: ['progress', 'coverage'],
     port: 9876,
