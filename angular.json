@@ -64,23 +64,6 @@
             "browserTarget": "ngx-animations-demo:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/ngx-animations-demo/src/test.ts",
-            "polyfills": "apps/ngx-animations-demo/src/polyfills.ts",
-            "tsConfig": "apps/ngx-animations-demo/tsconfig.spec.json",
-            "karmaConfig": "apps/ngx-animations-demo/karma.conf.js",
-            "styles": [
-              "apps/ngx-animations-demo/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/ngx-animations-demo/src/favicon.ico",
-              "apps/ngx-animations-demo/src/assets"
-            ]
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -140,24 +123,25 @@
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "libs/ngx-animations/src/test.ts",
-            "tsConfig": "libs/ngx-animations/tsconfig.spec.json",
-            "karmaConfig": "libs/ngx-animations/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "libs/ngx-animations/tsconfig.lib.json",
+              "libs/ngx-animations/tsconfig.spec.json",
               "libs/ngx-animations/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ngx-animations/jest.config.js",
+            "tsConfig": "libs/ngx-animations/tsconfig.spec.json",
+            "setupFile": "libs/ngx-animations/src/test-setup.ts"
           }
         }
       }

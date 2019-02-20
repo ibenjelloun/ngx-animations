@@ -8,9 +8,9 @@ before_script:
   - yarn global add @angular/cli codecov
 script:
   - yarn build
-  - yarn test-headless
+  - yarn test-ci
 after_success:
-  - codecov -f coverage/*.json -t $CODECOV_TOKEN
+  - codecov -t $CODECOV_TOKEN
 notifications:
   email:
     on_failure: change

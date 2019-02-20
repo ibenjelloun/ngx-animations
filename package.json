@@ -12,7 +12,7 @@
     "start": "ng serve",
     "build": "ng build ngx-animations",
     "test": "ng test ngx-animations --watch=true",
-    "test-headless": "ng test ngx-animations --browsers=ChromeHeadless",
+    "test-ci": "ng test ngx-animations",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
     "remark": "remark .",
@@ -86,6 +86,10 @@
     "tsickle": "0.34.3",
     "tslib": "^1.9.0",
     "tslint": "~5.12.1",
-    "typescript": "~3.1.1"
+    "typescript": "~3.1.1",
+    "@nrwl/builders": "7.5.2",
+    "jest": "^23.0.0",
+    "@types/jest": "^23.0.0",
+    "jest-preset-angular": "6.0.1"
   }
 }
