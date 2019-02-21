@@ -1,8 +1,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5608bd57e6841cb9f6da08b8a241a43)](https://app.codacy.com/app/ibenjelloun/ngx-animations?utm_source=github.com&utm_medium=referral&utm_content=ibenjelloun/ngx-animations&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ibenjelloun/ngx-animations.svg?branch=master)](https://travis-ci.org/ibenjelloun/ngx-animations)
+[![codecov](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master/graph/badge.svg)](https://codecov.io/gh/ibenjelloun/ngx-animations)
 [![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
 [![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
-[![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg)](https://snyk.io/test/github/ibenjelloun/ngx-animations)
 
 # NgxAnimations
 

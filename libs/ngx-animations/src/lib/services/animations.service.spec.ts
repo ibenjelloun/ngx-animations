@@ -2,8 +2,8 @@ import { AnimationsService } from './animations.service';
 import { animations } from '../model/animations-list';
 
 describe('AnimationsService (with spies)', () => {
-  const animationFactory = { create: (any) => {} };
-  const animationBuilder = { build: (any) => animationFactory };
+  const animationFactory = { create: any => {} };
+  const animationBuilder = { build: any => animationFactory };
   let animationBuilderSpy;
   let animationFactorySpy;
   let animationsService: AnimationsService;
