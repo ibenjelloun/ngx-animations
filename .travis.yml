@@ -5,7 +5,8 @@ branches:
   only:
     - master
 before_script:
-  - yarn global add @angular/cli codecov
+  - yarn global add @angular/cli
+  - yarn global add codecov
 script:
   - yarn build
   - yarn test-ci
