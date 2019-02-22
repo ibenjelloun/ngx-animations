@@ -9,7 +9,6 @@ before_script:
 script:
   - yarn build
   - yarn test-ci
-  - codecov -f coverage/libs/ngx-animations/*.json
 notifications:
   email:
     on_failure: change
