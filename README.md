@@ -16,8 +16,8 @@ This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css
 First import the `BrowserAnimationsModule` and `NgxAnimationsModule` :
 
 ```typescript
-import { BrowserAnimationsModule } from '@angular/platform*browser/animations';
-import { NgxAnimationsModule } from 'ngx*animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAnimationsModule } from 'ngx-animations';
 ...
 
 @NgModule({
@@ -41,7 +41,7 @@ Then in your component :
 Import the desired animation and the AnimationsService :
 
 ```typescript
-import { fadeIn, AnimationsService } from 'ngx*animations';
+import { fadeIn, AnimationsService } from 'ngx-animations';
 ```
 
 Get your element using the `@ViewChild` annotation :
