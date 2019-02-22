@@ -1,33 +1,25 @@
-import { AnimationStyleMetadata, AnimationAnimateMetadata, style, animate } from "@angular/animations";
+import { AnimationDefinition } from '../model/animation-definition';
 
-export function slideOutDown(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  const t = time / 2;
-  return [
-    style({ transform: 'translate3d(0, 0, 0)' }),
-    animate(t, style({ visibility: 'hidden',  transform: 'translate3d(0, 100%, 0)' }))
-  ];
-}
+export const slideOutDown: AnimationDefinition = {
+  denominator: 2,
+  start: { transform: 'translate3d(0, 0, 0' },
+  steps: [{ visibility: 'hidden', transform: 'translate3d(0, 100%, 0' }]
+};
 
-export function slideOutLeft(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  const t = time / 2;
-  return [
-    style({ transform: 'translate3d(0, 0, 0)' }),
-    animate(t, style({ visibility: 'hidden',  transform: 'translate3d(-100%, 0, 0)' }))
-  ];
-}
+export const slideOutLeft: AnimationDefinition = {
+  denominator: 2,
+  start: { transform: 'translate3d(0, 0, 0' },
+  steps: [{ visibility: 'hidden', transform: 'translate3d(-100%, 0, 0' }]
+};
 
-export function slideOutRight(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  const t = time / 2;
-  return [
-    style({ transform: 'translate3d(0, 0, 0)' }),
-    animate(t, style({ visibility: 'hidden',  transform: 'translate3d(100%, 0, 0)' }))
-  ];
-}
+export const slideOutRight: AnimationDefinition = {
+  denominator: 2,
+  start: { transform: 'translate3d(0, 0, 0' },
+  steps: [{ visibility: 'hidden', transform: 'translate3d(100%, 0, 0' }]
+};
 
-export function slideOutUp(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  const t = time / 2;
-  return [
-    style({ transform: 'translate3d(0, 0, 0)' }),
-    animate(t, style({ visibility: 'hidden',  transform: 'translate3d(0, -100%, 0)' }))
-  ];
-}
+export const slideOutUp: AnimationDefinition = {
+  denominator: 2,
+  start: { transform: 'translate3d(0, 0, 0' },
+  steps: [{ visibility: 'hidden', transform: 'translate3d(0, -100%, 0' }]
+};

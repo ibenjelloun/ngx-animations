@@ -1,64 +1,55 @@
-import { AnimationStyleMetadata, AnimationAnimateMetadata, style, animate } from "@angular/animations";
+import { AnimationDefinition } from '../model/animation-definition';
 
-export function fadeIn(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0' }),
-    animate(time, style({ opacity: '1' }))
-  ];
-}
+export const fadeIn: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0' },
+  steps: [{ opacity: '1' }]
+};
 
-export function fadeInDown(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(0, -100%, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInDown: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(0, -100%, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInDownBig(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(0, -2000px, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInDownBig: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(0, -2000px, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInLeft(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(-100%, 0, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInLeft: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(-100%, 0, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInLeftBig(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(-2000px, 0, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInLeftBig: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(-2000px, 0, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInRight(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(100%, 0, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInRight: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(100%, 0, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInRightBig(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(2000px, 0, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInRightBig: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(2000px, 0, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInUp(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(0, 100%, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInUp: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(0, 100%, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};
 
-export function fadeInUpBig(time: number): (AnimationStyleMetadata | AnimationAnimateMetadata)[] {
-  return [
-    style({ opacity: '0', transform: 'translate3d(0, 2000px, 0)' }),
-    animate(time, style({ opacity: '1', transform: 'translate3d(0, 0, 0)' }))
-  ];
-}
+export const fadeInUpBig: AnimationDefinition = {
+  denominator: 1,
+  start: { opacity: '0', transform: 'translate3d(0, 2000px, 0' },
+  steps: [{ opacity: '1', transform: 'translate3d(0, 0, 0' }]
+};

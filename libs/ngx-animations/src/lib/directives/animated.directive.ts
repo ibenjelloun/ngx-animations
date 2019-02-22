@@ -31,8 +31,10 @@ export class AnimatedDirective {
       player = this.createPlayer(this.animation, this.time);
     }
     player.play();
-    player.onDone(async function() {
-      await timer(500).toPromise();
+    player.onDone(async () => {
+      const time =
+        options !== undefined ? options.time || this.time : this.time;
+      await timer(time).toPromise();
       player.reset();
     });
   }

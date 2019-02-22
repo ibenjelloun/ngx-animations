@@ -9,19 +9,17 @@ import { timer } from 'rxjs';
 })
 export class AppComponent {
   @ViewChild('cube') cube: ElementRef;
-  animations;
   animationsNames;
-  animation = 'fadeIn';
+  animation = 'bounce';
   show = true;
 
   constructor(private animationsService: AnimationsService) {
-    this.animations = animations;
-    this.animationsNames = Object.keys(this.animations);
+    this.animationsNames = Object.keys(animations);
   }
 
   animate() {
     const player = this.animationsService.create(
-      this.animations[this.animation](300),
+      animations[this.animation](300),
       this.cube.nativeElement
     );
     player.play();
