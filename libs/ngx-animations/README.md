@@ -1,22 +1,36 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5608bd57e6841cb9f6da08b8a241a43)](https://app.codacy.com/app/ibenjelloun/ngx-animations?utm_source=github.com&utm_medium=referral&utm_content=ibenjelloun/ngx-animations&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ibenjelloun/ngx-animations.svg?branch=master)](https://travis-ci.org/ibenjelloun/ngx-animations)
+[![codecov](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master/graph/badge.svg)](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master)
 [![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
 [![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
-[![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg)](https://snyk.io/test/github/ibenjelloun/ngx-animations)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ibenjelloun/ngx-animations/blob/master/LICENSE)
 
 # NgxAnimations
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-[You can find a Demo here.](https://stackblitz.com/edit/ngx*animations)
+[You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
 
-## Quick Start
+## Installing and importing NgxAnimations
 
-First import the `BrowserAnimationsModule` and `NgxAnimationsModule` :
+1. Install `ngx-animations` :
+
+```bash
+npm install ngx-animations
+```
+
+Or
+
+```bash
+yarn add ngx-animations
+```
+
+
+2. Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
-import { BrowserAnimationsModule } from '@angular/platform*browser/animations';
-import { NgxAnimationsModule } from 'ngx*animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAnimationsModule } from 'ngx-animations';
 ...
 
 @NgModule({
@@ -24,6 +38,18 @@ import { NgxAnimationsModule } from 'ngx*animations';
   ...
 })
 ```
+
+## Using the `AnimatedDirective` to create animations on events with a minimum of code
+
+```html
+<div (click)="myDiv.animate()">
+  <div #myDiv="animated" [animAted]="{time: 800, animation: 'flip'}"></div>
+</div>
+```
+
+[Running example on stackblitz using `@ngx-starter-kit/ngx-utils` InViewportDirective](https://stackblitz.com/edit/ngx-animations-animated-directive-inviewport)
+
+## Using the `AnimIfDirective` to animate an element on init and before destroy
 
 Use the `*animIf` directive to set the start and end animation :
 
@@ -33,14 +59,14 @@ Use the `*animIf` directive to set the start and end animation :
 ></div>
 ```
 
-## Control animations from typescript
+## Use the AnimationsService to create and use animations (you can use `AnimatedDirective` instead)
 
 Then in your component :
 
 Import the desired animation and the AnimationsService :
 
 ```typescript
-import { fadeIn, AnimationsService } from 'ngx*animations';
+import { fadeIn, AnimationsService } from 'ngx-animations';
 ```
 
 Get your element using the `@ViewChild` annotation :
@@ -72,79 +98,79 @@ player.play();
 
 ## List of animations
 
--bounce
--flash
--pulse
--rubberBand
--shake
--swing
--tada
--wobble
--jello
--bounceIn
--bounceInDown
--bounceInLeft
--bounceInRight
--bounceInUp
--bounceOut
--bounceOutDown
--bounceOutLeft
--bounceOutRight
--bounceOutUp
--fadeIn
--fadeInDown
--fadeInDownBig
--fadeInLeft
--fadeInLeftBig
--fadeInRight
--fadeInRightBig
--fadeInUp
--fadeInUpBig
--fadeOut
--fadeOutDown
--fadeOutDownBig
--fadeOutLeft
--fadeOutLeftBig
--fadeOutRight
--fadeOutRightBig
--fadeOutUp
--fadeOutUpBig
--flip
--flipInX
--flipInY
--flipOutX
--flipOutY
--lightSpeedIn
--lightSpeedOut
--rotateIn
--rotateInDownLeft
--rotateInDownRight
--rotateInUpLeft
--rotateInUpRight
--rotateOut
--rotateOutDownLeft
--rotateOutDownRight
--rotateOutUpLeft
--rotateOutUpRight
--slideInUp
--slideInDown
--slideInLeft
--slideInRight
--slideOutUp
--slideOutDown
--slideOutLeft
--slideOutRight
--zoomIn
--zoomInDown
--zoomInLeft
--zoomInRight
--zoomInUp
--zoomOut
--zoomOutDown
--zoomOutLeft
--zoomOutRight
--zoomOutUp
--hinge
--jackInTheBox
--rollIn
--rollOut
+bounce
+flash
+pulse
+rubberBand
+shake
+swing
+tada
+wobble
+jello
+bounceIn
+bounceInDown
+bounceInLeft
+bounceInRight
+bounceInUp
+bounceOut
+bounceOutDown
+bounceOutLeft
+bounceOutRight
+bounceOutUp
+fadeIn
+fadeInDown
+fadeInDownBig
+fadeInLeft
+fadeInLeftBig
+fadeInRight
+fadeInRightBig
+fadeInUp
+fadeInUpBig
+fadeOut
+fadeOutDown
+fadeOutDownBig
+fadeOutLeft
+fadeOutLeftBig
+fadeOutRight
+fadeOutRightBig
+fadeOutUp
+fadeOutUpBig
+flip
+flipInX
+flipInY
+flipOutX
+flipOutY
+lightSpeedIn
+lightSpeedOut
+rotateIn
+rotateInDownLeft
+rotateInDownRight
+rotateInUpLeft
+rotateInUpRight
+rotateOut
+rotateOutDownLeft
+rotateOutDownRight
+rotateOutUpLeft
+rotateOutUpRight
+slideInUp
+slideInDown
+slideInLeft
+slideInRight
+slideOutUp
+slideOutDown
+slideOutLeft
+slideOutRight
+zoomIn
+zoomInDown
+zoomInLeft
+zoomInRight
+zoomInUp
+zoomOut
+zoomOutDown
+zoomOutLeft
+zoomOutRight
+zoomOutUp
+hinge
+jackInTheBox
+rollIn
+rollOut

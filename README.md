@@ -9,11 +9,24 @@
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-[You can find a Demo here.](https://stackblitz.com/edit/ngx-animations)
+[You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
 
-## Quick Start
+## Installing and importing NgxAnimations
 
-First import the `BrowserAnimationsModule` and `NgxAnimationsModule` :
+1. Install `ngx-animations` :
+
+```bash
+npm install ngx-animations
+```
+
+Or
+
+```bash
+yarn add ngx-animations
+```
+
+
+2. Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +39,18 @@ import { NgxAnimationsModule } from 'ngx-animations';
 })
 ```
 
+## Using the `AnimatedDirective` to create animations on events with a minimum of code
+
+```html
+<div (click)="myDiv.animate()">
+  <div #myDiv="animated" [animAted]="{time: 800, animation: 'flip'}"></div>
+</div>
+```
+
+[Running example on stackblitz using `@ngx-starter-kit/ngx-utils` InViewportDirective](https://stackblitz.com/edit/ngx-animations-animated-directive-inviewport)
+
+## Using the `AnimIfDirective` to animate an element on init and before destroy
+
 Use the `*animIf` directive to set the start and end animation :
 
 ```html
@@ -34,7 +59,7 @@ Use the `*animIf` directive to set the start and end animation :
 ></div>
 ```
 
-## Control animations from typescript
+## Use the AnimationsService to create and use animations (you can use `AnimatedDirective` instead)
 
 Then in your component :
 
@@ -73,79 +98,79 @@ player.play();
 
 ## List of animations
 
--bounce
--flash
--pulse
--rubberBand
--shake
--swing
--tada
--wobble
--jello
--bounceIn
--bounceInDown
--bounceInLeft
--bounceInRight
--bounceInUp
--bounceOut
--bounceOutDown
--bounceOutLeft
--bounceOutRight
--bounceOutUp
--fadeIn
--fadeInDown
--fadeInDownBig
--fadeInLeft
--fadeInLeftBig
--fadeInRight
--fadeInRightBig
--fadeInUp
--fadeInUpBig
--fadeOut
--fadeOutDown
--fadeOutDownBig
--fadeOutLeft
--fadeOutLeftBig
--fadeOutRight
--fadeOutRightBig
--fadeOutUp
--fadeOutUpBig
--flip
--flipInX
--flipInY
--flipOutX
--flipOutY
--lightSpeedIn
--lightSpeedOut
--rotateIn
--rotateInDownLeft
--rotateInDownRight
--rotateInUpLeft
--rotateInUpRight
--rotateOut
--rotateOutDownLeft
--rotateOutDownRight
--rotateOutUpLeft
--rotateOutUpRight
--slideInUp
--slideInDown
--slideInLeft
--slideInRight
--slideOutUp
--slideOutDown
--slideOutLeft
--slideOutRight
--zoomIn
--zoomInDown
--zoomInLeft
--zoomInRight
--zoomInUp
--zoomOut
--zoomOutDown
--zoomOutLeft
--zoomOutRight
--zoomOutUp
--hinge
--jackInTheBox
--rollIn
--rollOut
+bounce
+flash
+pulse
+rubberBand
+shake
+swing
+tada
+wobble
+jello
+bounceIn
+bounceInDown
+bounceInLeft
+bounceInRight
+bounceInUp
+bounceOut
+bounceOutDown
+bounceOutLeft
+bounceOutRight
+bounceOutUp
+fadeIn
+fadeInDown
+fadeInDownBig
+fadeInLeft
+fadeInLeftBig
+fadeInRight
+fadeInRightBig
+fadeInUp
+fadeInUpBig
+fadeOut
+fadeOutDown
+fadeOutDownBig
+fadeOutLeft
+fadeOutLeftBig
+fadeOutRight
+fadeOutRightBig
+fadeOutUp
+fadeOutUpBig
+flip
+flipInX
+flipInY
+flipOutX
+flipOutY
+lightSpeedIn
+lightSpeedOut
+rotateIn
+rotateInDownLeft
+rotateInDownRight
+rotateInUpLeft
+rotateInUpRight
+rotateOut
+rotateOutDownLeft
+rotateOutDownRight
+rotateOutUpLeft
+rotateOutUpRight
+slideInUp
+slideInDown
+slideInLeft
+slideInRight
+slideOutUp
+slideOutDown
+slideOutLeft
+slideOutRight
+zoomIn
+zoomInDown
+zoomInLeft
+zoomInRight
+zoomInUp
+zoomOut
+zoomOutDown
+zoomOutLeft
+zoomOutRight
+zoomOutUp
+hinge
+jackInTheBox
+rollIn
+rollOut
