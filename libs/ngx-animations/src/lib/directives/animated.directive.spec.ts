@@ -11,13 +11,12 @@ import { By } from '@angular/platform-browser';
 
 @Component({
   template: `
-    <div #theDiv="animated" [animAted]="{ time: 300, animation: 'fadeIn' }">
-      Some Content
-    </div>
+    <div #theDiv="animated" [animAted]="options">Some Content</div>
   `
 })
 class TestComponent {
   show = true;
+  options = { time: 300, animation: 'fadeIn' };
 }
 
 describe('AnimatedDirective', () => {
@@ -58,15 +57,37 @@ describe('AnimatedDirective', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should animate when no options', fakeAsync(() => {
+  it('should animate when options are null', fakeAsync(() => {
+    component.options = null;
+    fixture.detectChanges();
     directive.animate();
     tick(500);
     expect(playerSpy).toHaveBeenCalledTimes(1);
   }));
 
-  it('should animate when options', fakeAsync(() => {
+  it('should animate when options are empty object', fakeAsync(() => {
+    component.options = <any>{};
+    fixture.detectChanges();
+    directive.animate();
+    tick(500);
+    expect(playerSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should animate when options only in initialisation', fakeAsync(() => {
+    directive.animate();
+    tick(500);
+    expect(playerSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should animate when options in initialisation and call', fakeAsync(() => {
     directive.animate({ time: 100 });
     tick(100);
+    expect(playerSpy).toHaveBeenCalledTimes(1);
+  }));
+
+  it('should animate when options in initialisation and call with empty object', fakeAsync(() => {
+    directive.animate({});
+    tick(500);
     expect(playerSpy).toHaveBeenCalledTimes(1);
   }));
 });

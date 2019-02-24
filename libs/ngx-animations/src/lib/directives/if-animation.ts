@@ -16,6 +16,7 @@ export class AnimIfDirective {
   @Input()
   animIfInfo: { startAnim: string; endAnim: string; time: number };
   shownBefore = false;
+  subscription;
 
   constructor(
     private templateRef: TemplateRef<any>,
@@ -27,6 +28,9 @@ export class AnimIfDirective {
   set animIf(show: boolean) {
     this.viewContainer.clear();
     this.viewContainer.createEmbeddedView(this.templateRef);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
     if (show) {
       const player = this.createPlayer(
         this.animIfInfo.startAnim,
@@ -34,7 +38,8 @@ export class AnimIfDirective {
       );
       player.play();
       this.shownBefore = true;
-    } else if (this.shownBefore) {
+    }
+    if (!show && this.shownBefore) {
       const player = this.createPlayer(
         this.animIfInfo.endAnim,
         this.animIfInfo.time
@@ -53,7 +58,7 @@ export class AnimIfDirective {
   }
 
   private clearAfterTime(viewContainer: ViewContainerRef, time: number) {
-    timer(time).subscribe(() => {
+    this.subscription = timer(time).subscribe(() => {
       viewContainer.clear();
     });
   }

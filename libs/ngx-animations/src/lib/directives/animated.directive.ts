@@ -9,8 +9,10 @@ import { timer } from 'rxjs';
 })
 export class AnimatedDirective {
   @Input() set animAted(options: { animation?; time? }) {
-    this.time = options.time || this.time;
-    this.animation = options.animation || this.animation;
+    if (options) {
+      this.time = options.time || this.time;
+      this.animation = options.animation || this.animation;
+    }
   }
   time = 300;
   animation = 'fadeIn';
