@@ -1,13 +1,9 @@
 import { Component, DebugElement } from '@angular/core';
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { AnimIfDirective } from './if-animation';
+import { AnimIfDirective } from './if-animation.directive';
 import { AnimationsService } from '../services/animations.service';
+import { animations } from '../model/animations-list';
 
 @Component({
   template: `
@@ -25,6 +21,7 @@ describe('AnimIfDirective', () => {
 
   beforeEach(() => {
     const animationsServiceMock = {
+      animations: animations,
       create: () => {
         return {
           play: () => {}
@@ -33,9 +30,7 @@ describe('AnimIfDirective', () => {
     };
     fixture = TestBed.configureTestingModule({
       declarations: [AnimIfDirective, TestComponent],
-      providers: [
-        { provide: AnimationsService, useValue: animationsServiceMock }
-      ]
+      providers: [{ provide: AnimationsService, useValue: animationsServiceMock }]
     }).createComponent(TestComponent);
     fixture.detectChanges();
     component = fixture.debugElement.componentInstance;
@@ -69,5 +64,4 @@ describe('AnimIfDirective', () => {
     de = fixture.debugElement.query(By.css('div'));
     expect(de).toBeNull();
   }));
-
 });

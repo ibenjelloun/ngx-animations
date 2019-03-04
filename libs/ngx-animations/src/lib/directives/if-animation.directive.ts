@@ -6,7 +6,6 @@ import {
   EmbeddedViewRef
 } from '@angular/core';
 import { AnimationsService } from '../services/animations.service';
-import { animations } from '../model/animations-list';
 import { timer } from 'rxjs';
 
 @Directive({
@@ -21,7 +20,7 @@ export class AnimIfDirective {
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
-    private animationsService: AnimationsService
+    private _animationsService: AnimationsService
   ) {}
 
   @Input()
@@ -51,8 +50,8 @@ export class AnimIfDirective {
   }
 
   private createPlayer(animation: string, time: number) {
-    return this.animationsService.create(
-      animations[animation](time),
+    return this._animationsService.create(
+      this._animationsService.animations[animation](time),
       (this.viewContainer.get(0) as EmbeddedViewRef<any>).rootNodes[0]
     );
   }

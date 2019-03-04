@@ -1,13 +1,9 @@
 import { AnimatedDirective } from './animated.directive';
 import { Component } from '@angular/core';
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { AnimationsService } from '../services/animations.service';
 import { By } from '@angular/platform-browser';
+import { animations } from '../model/animations-list';
 
 @Component({
   template: `
@@ -36,21 +32,18 @@ describe('AnimatedDirective', () => {
     };
     playerSpy = jest.spyOn(player, 'play');
     const animationsServiceMock = {
+      animations: animations,
       create: () => {
         return player;
       }
     };
     fixture = TestBed.configureTestingModule({
       declarations: [AnimatedDirective, TestComponent],
-      providers: [
-        { provide: AnimationsService, useValue: animationsServiceMock }
-      ]
+      providers: [{ provide: AnimationsService, useValue: animationsServiceMock }]
     }).createComponent(TestComponent);
     fixture.detectChanges();
     component = fixture.debugElement.componentInstance;
-    directive = fixture.debugElement
-      .query(By.directive(AnimatedDirective))
-      .injector.get(AnimatedDirective);
+    directive = fixture.debugElement.query(By.directive(AnimatedDirective)).injector.get(AnimatedDirective);
   });
 
   it('should create an instance', () => {

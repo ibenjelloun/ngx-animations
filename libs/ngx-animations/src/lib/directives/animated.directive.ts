@@ -1,6 +1,5 @@
 import { Directive, Input, ElementRef } from '@angular/core';
 import { AnimationsService } from '../services/animations.service';
-import { animations } from '../model/animations-list';
 import { timer } from 'rxjs';
 
 @Directive({
@@ -19,7 +18,7 @@ export class AnimatedDirective {
 
   constructor(
     private el: ElementRef,
-    private animationsService: AnimationsService
+    private _animationsService: AnimationsService
   ) {}
 
   public animate(options?: { animation?; time? }) {
@@ -42,8 +41,8 @@ export class AnimatedDirective {
   }
 
   private createPlayer(animation: string, time: number) {
-    return this.animationsService.create(
-      animations[animation](time),
+    return this._animationsService.create(
+      this._animationsService.animations[animation](time),
       this.el.nativeElement
     );
   }
