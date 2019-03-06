@@ -7,27 +7,26 @@
 <div class="container"><div #cube class="cube"></div></div>
 
 <div class="commands-container">
-  <button (click)="show = !show">Show/Hide</button>
+  <button (click)="show = !show">{{ show ? 'Hide' : 'Show' }}</button>
 </div>
 <div class="container">
-  <div
-    *animIf="
-      show;
-      info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }
-    "
-    class="cube"
-  ></div>
+  <div *animIf="show; info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }" class="cube"></div>
 </div>
 
 <div class="commands-container">
   <button (click)="theCube.animate()">
-    Animate
+    Play Animation On Demand
   </button>
 </div>
 <div class="container">
-  <div
-    #theCube="animated"
-    [animAted]="{ time: 300, animation: 'aCustomAnimation' }"
-    class="cube"
-  ></div>
+  <div #theCube="animated" [animAted]="{ time: 300, animation: 'bounce' }" class="cube"></div>
+</div>
+
+<div class="commands-container">
+  <button (click)="theSecondCube.animate()">
+    Play A Custom Animation
+  </button>
+</div>
+<div class="container">
+  <div #theSecondCube="animated" [animAted]="{ time: 300, animation: 'aCustomAnimation' }" class="cube"></div>
 </div>
