@@ -1,5 +1,3 @@
 export class AnimationDefinition {
-  denominator = 1;
-  start: any;
-  steps: any[];
+  constructor(public start: any, public steps: any[], public denominator: number = 1) {}
 }

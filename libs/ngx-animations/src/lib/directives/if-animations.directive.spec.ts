@@ -1,13 +1,9 @@
 import { Component, DebugElement } from '@angular/core';
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { AnimIfDirective } from './if-animation';
+import { AnimIfDirective } from './if-animation.directive';
 import { AnimationsService } from '../services/animations.service';
+import { animations } from '../model/animations-list';
 
 @Component({
   template: `
@@ -22,20 +18,20 @@ describe('AnimIfDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let component: TestComponent;
   let de: DebugElement;
+  const animationsServiceMock: any = {
+    animations: animations,
+    create: () => {
+      return {
+        play: () => {}
+      };
+    }
+  };
+  const viewContainerMock: any = { clear: () => {}, createEmbeddedView: () => {} };
 
   beforeEach(() => {
-    const animationsServiceMock = {
-      create: () => {
-        return {
-          play: () => {}
-        };
-      }
-    };
     fixture = TestBed.configureTestingModule({
       declarations: [AnimIfDirective, TestComponent],
-      providers: [
-        { provide: AnimationsService, useValue: animationsServiceMock }
-      ]
+      providers: [{ provide: AnimationsService, useValue: animationsServiceMock }]
     }).createComponent(TestComponent);
     fixture.detectChanges();
     component = fixture.debugElement.componentInstance;
@@ -70,4 +66,11 @@ describe('AnimIfDirective', () => {
     expect(de).toBeNull();
   }));
 
+  it('should unsubscribe from subscription if exists', fakeAsync(() => {
+    const animIf = new AnimIfDirective(null, viewContainerMock, animationsServiceMock);
+    animIf.subscription = { unsubscribe: () => {} };
+    const unsubscribeSpy = jest.spyOn(animIf.subscription, 'unsubscribe');
+    animIf.animIf = false;
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(1);
+  }));
 });
