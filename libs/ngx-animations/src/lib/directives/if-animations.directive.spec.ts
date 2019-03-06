@@ -18,7 +18,7 @@ describe('AnimIfDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let component: TestComponent;
   let de: DebugElement;
-  const animationsServiceMock = {
+  const animationsServiceMock: any = {
     animations: animations,
     create: () => {
       return {
@@ -26,7 +26,7 @@ describe('AnimIfDirective', () => {
       };
     }
   };
-  const viewContainerMock = { clear: () => {}, createEmbeddedView: () => {} };
+  const viewContainerMock: any = { clear: () => {}, createEmbeddedView: () => {} };
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
