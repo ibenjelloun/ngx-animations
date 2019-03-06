@@ -18,16 +18,17 @@ describe('AnimIfDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let component: TestComponent;
   let de: DebugElement;
+  const animationsServiceMock = {
+    animations: animations,
+    create: () => {
+      return {
+        play: () => {}
+      };
+    }
+  };
+  const viewContainerMock = { clear: () => {}, createEmbeddedView: () => {} };
 
   beforeEach(() => {
-    const animationsServiceMock = {
-      animations: animations,
-      create: () => {
-        return {
-          play: () => {}
-        };
-      }
-    };
     fixture = TestBed.configureTestingModule({
       declarations: [AnimIfDirective, TestComponent],
       providers: [{ provide: AnimationsService, useValue: animationsServiceMock }]
@@ -63,5 +64,13 @@ describe('AnimIfDirective', () => {
     fixture.detectChanges();
     de = fixture.debugElement.query(By.css('div'));
     expect(de).toBeNull();
+  }));
+
+  it('should unsubscribe from subscription if exists', fakeAsync(() => {
+    const animIf = new AnimIfDirective(null, viewContainerMock, animationsServiceMock);
+    animIf.subscription = { unsubscribe: () => {} };
+    const unsubscribeSpy = jest.spyOn(animIf.subscription, 'unsubscribe');
+    animIf.animIf = false;
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(1);
   }));
 });
