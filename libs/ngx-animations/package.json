@@ -1,6 +1,6 @@
 {
   "name": "ngx-animations",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "repository": {"type": "git", "url": "https://github.com/ibenjelloun/ngx-animations"},
   "description": "An adaptation of Animate.css using @angular/animations",
   "keywords": [

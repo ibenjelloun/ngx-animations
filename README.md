@@ -59,6 +59,31 @@ Use the `*animIf` directive to set the start and end animation :
 ></div>
 ```
 
+## Add custom animations to the existing animations
+
+Create an `AnimationDefinition` instance for every animation you want to add :
+
+```
+const animationDefinition = new AnimationDefinition({}, [
+  { background: 'blue', width: '25%', offset: 0.25 },
+  { background: 'green', width: '100%', offset: 0.5 },
+  { background: 'yellow', width: '50%', offset: 0.75 },
+  { background: 'black', width: '200px', offset: 1 }
+]);
+```
+
+Inject the `AnimationsService` in your `AppModule` and use the `addAnimations` method to add your array of `AnimationDefinition`s:
+
+```typescript
+constructor(private animationsService: AnimationsService) {
+  this._animationsService.addAnimations([{ name: 'aCustomAnimation', animation: animationDefinition }]);
+}
+```
+
+That's it, you are now ready to use your custom animation like other native animations.
+
+[You can find a running example for custom animations on stackblitz](https://stackblitz.com/edit/ngx-animations-custom-animation)
+
 ## Use the AnimationsService to create and use animations (you can use `AnimatedDirective` instead)
 
 Then in your component :
