@@ -3,3 +3,4 @@ export * from './lib/services/animations.service';
 export * from './lib/animations';
 export * from './lib/model/animations-list';
 export * from './lib/model/animation-definition';
+export * from './lib/routing/transition-builder';

@@ -24,8 +24,6 @@ Or
 ```bash
 yarn add ngx-animations
 ```
-
-
 2. Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
@@ -63,7 +61,7 @@ Use the `*animIf` directive to set the start and end animation :
 
 Create an `AnimationDefinition` instance for every animation you want to add :
 
-```
+```typescript
 const animationDefinition = new AnimationDefinition({}, [
   { background: 'blue', width: '25%', offset: 0.25 },
   { background: 'green', width: '100%', offset: 0.5 },
