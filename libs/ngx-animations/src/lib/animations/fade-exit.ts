@@ -3,7 +3,7 @@ import { AnimationDefinition } from '../model/animation-definition';
 export const fadeOut: AnimationDefinition = {
   denominator: 1,
   start: { opacity: '1' },
-  steps: [, { opacity: '0' }]
+  steps: [{ opacity: '0' }]
 };
 
 export const fadeOutDown: AnimationDefinition = {
