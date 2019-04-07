@@ -366,9 +366,9 @@
     webpack-dev-server "3.1.14"
     webpack-node-externals "1.7.2"
 
-"@nrwl/nx@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.5.2.tgz#df8c8d68d2645b20ac9ce054938a0371a2c3f4ba"
+"@nrwl/nx@7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-7.8.0.tgz#a73177f425cb19c20ad909ad462e189342666ea3"
 
 "@nrwl/schematics@7.5.2":
   version "7.5.2"
