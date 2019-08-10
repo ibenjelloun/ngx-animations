@@ -25,12 +25,12 @@ export class AnimIfDirective {
 
   @Input()
   set animIf(show: boolean) {
-    this.viewContainer.clear();
-    this.viewContainer.createEmbeddedView(this.templateRef);
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-    if (show) {
+    if (show && !this.shownBefore) {
+      this.viewContainer.clear();
+      this.viewContainer.createEmbeddedView(this.templateRef);
       const player = this.createPlayer(
         this.animIfInfo.startAnim,
         this.animIfInfo.time

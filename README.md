@@ -9,7 +9,7 @@
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-[You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
+[You can find a demo here.](https://stackblitz.com/edit/ngx-animations-directive-fix)
 
 ## Installing and importing NgxAnimations
 
