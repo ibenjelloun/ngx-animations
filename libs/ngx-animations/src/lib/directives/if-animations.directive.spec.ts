@@ -11,7 +11,7 @@ import { animations } from '../model/animations-list';
   `
 })
 class TestComponent {
-  show = true;
+  show = false;
 }
 
 describe('AnimIfDirective', () => {
@@ -46,11 +46,10 @@ describe('AnimIfDirective', () => {
     expect(de).toBeNull();
   }));
 
-  it('should display the div in the default state', () => {
+  it('should not display the div when show in false by default', () => {
     fixture.detectChanges();
     de = fixture.debugElement.query(By.css('div'));
-    const content = de.nativeElement.textContent;
-    expect(content).toBe('Some Content');
+    expect(de).toBeNull();
   });
 
   it('should display the div in the default state', fakeAsync(() => {
