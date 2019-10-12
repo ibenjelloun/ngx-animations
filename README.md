@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master/graph/badge.svg)](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master)
 [![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
 [![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ibenjelloun/ngx-animations/blob/master/LICENSE)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ibenjelloun/ngx-animations/blob/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/ibenjelloun/ngx-animations.svg)](https://greenkeeper.io/)
 
 # NgxAnimations
 
