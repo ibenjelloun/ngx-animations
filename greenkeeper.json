@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "libs/ngx-animations/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
