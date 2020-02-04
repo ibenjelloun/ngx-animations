@@ -137,7 +137,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/ngx-animations/jest.config.js",
             "tsConfig": "libs/ngx-animations/tsconfig.spec.json",

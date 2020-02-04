@@ -8,7 +8,7 @@ import { timer } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('cube') cube: ElementRef;
+  @ViewChild('cube', { static: true }) cube: ElementRef;
   animationsNames;
   animation = 'bounce';
   show = true;
@@ -18,10 +18,7 @@ export class AppComponent {
   }
 
   animate() {
-    const player = this.animationsService.create(
-      animations[this.animation](300),
-      this.cube.nativeElement
-    );
+    const player = this.animationsService.create(animations[this.animation](300), this.cube.nativeElement);
     player.play();
     player.onDone(async function() {
       await timer(500).toPromise();
