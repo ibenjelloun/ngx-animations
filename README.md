@@ -11,8 +11,8 @@ This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css
 
 [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
 
-Angular 7.x use ngx-animations 2.x
-Angular 8.x use ngx-animations 3.x
+* Angular 7.x use ngx-animations 2.x
+* Angular 8.x use ngx-animations 3.x
 
 ## Installing and importing NgxAnimations
 
