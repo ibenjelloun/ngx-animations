@@ -69,7 +69,8 @@ describe('AnimIfDirective', () => {
     const animIf = new AnimIfDirective(null, viewContainerMock, animationsServiceMock);
     animIf.subscription = { unsubscribe: () => {} };
     const unsubscribeSpy = jest.spyOn(animIf.subscription, 'unsubscribe');
-    animIf.animIf = false;
+    animIf._animIfDirty = true;
+    animIf.ngDoCheck();
     expect(unsubscribeSpy).toHaveBeenCalledTimes(1);
   }));
 });
