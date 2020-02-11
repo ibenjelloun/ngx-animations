@@ -9,8 +9,8 @@
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-[You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
-[Angular 9 beta version.](https://stackblitz.com/edit/ngx-animations-beta)
+* [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
+* [Angular 9 beta version.](https://stackblitz.com/edit/ngx-animations-beta)
 
 * Angular 7.x use ngx-animations 2.x
 * Angular 8.x use ngx-animations 3.x
