@@ -1,6 +1,6 @@
 {
   "name": "ngx-animations",
-  "version": "3.0.0",
+  "version": "4.0.0-beta",
   "repository": {"type": "git", "url": "https://github.com/ibenjelloun/ngx-animations"},
   "description": "An adaptation of Animate.css using @angular/animations",
   "keywords": [
@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "8.x",
-    "@angular/core": "8.x"
+    "@angular/common": "9.x",
+    "@angular/core": "9.x"
   }
 }

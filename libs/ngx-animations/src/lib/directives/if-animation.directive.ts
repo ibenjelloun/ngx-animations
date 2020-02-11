@@ -1,10 +1,4 @@
-import {
-  Directive,
-  Input,
-  ViewContainerRef,
-  TemplateRef,
-  EmbeddedViewRef
-} from '@angular/core';
+import { Directive, Input, ViewContainerRef, TemplateRef, EmbeddedViewRef } from '@angular/core';
 import { AnimationsService } from '../services/animations.service';
 import { timer } from 'rxjs';
 
@@ -31,18 +25,12 @@ export class AnimIfDirective {
     if (show && !this.shownBefore) {
       this.viewContainer.clear();
       this.viewContainer.createEmbeddedView(this.templateRef);
-      const player = this.createPlayer(
-        this.animIfInfo.startAnim,
-        this.animIfInfo.time
-      );
+      const player = this.createPlayer(this.animIfInfo.startAnim, this.animIfInfo.time);
       player.play();
       this.shownBefore = true;
     }
     if (!show && this.shownBefore) {
-      const player = this.createPlayer(
-        this.animIfInfo.endAnim,
-        this.animIfInfo.time
-      );
+      const player = this.createPlayer(this.animIfInfo.endAnim, this.animIfInfo.time);
       player.play();
       this.clearAfterTime(this.viewContainer, this.animIfInfo.time);
       this.shownBefore = false;

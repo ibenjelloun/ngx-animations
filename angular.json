@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/apps/ngx-animations-demo",
             "index": "apps/ngx-animations-demo/src/index.html",
             "main": "apps/ngx-animations-demo/src/main.ts",
@@ -29,6 +30,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "apps/ngx-animations-demo/src/environments/environment.ts",
@@ -119,7 +126,8 @@
           },
           "configurations": {
             "production": {
-              "project": "libs/ngx-animations/ng-package.prod.json"
+              "project": "libs/ngx-animations/ng-package.prod.json",
+              "tsConfig": "libs/ngx-animations/tsconfig.lib.prod.json"
             }
           }
         },
@@ -152,7 +160,8 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/schematics",
+    "analytics": "acc52c5e-7dea-4eb1-b3cd-3fd4b3515b1a"
   },
   "defaultProject": "ngx-animations-demo"
 }
