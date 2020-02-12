@@ -46,6 +46,10 @@ describe('AnimatedDirective', () => {
     directive = fixture.debugElement.query(By.directive(AnimatedDirective)).injector.get(AnimatedDirective);
   });
 
+  it('should construct without errors', () => {
+    expect(new AnimatedDirective(null, null)).toBeTruthy();
+  });
+
   it('should create an instance', () => {
     expect(component).toBeTruthy();
   });

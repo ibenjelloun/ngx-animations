@@ -20,6 +20,10 @@ describe('AnimationsService (with spies)', () => {
     animationsService = new AnimationsService(<any>animationBuilder);
   });
 
+  it('should construct without errors', () => {
+    expect(new AnimationsService(null)).toBeTruthy();
+  });
+
   it('should return animation player', () => {
     animationsService.create(animations.bounce(300), null);
     expect(animationBuilderSpy).toHaveBeenCalledTimes(1);

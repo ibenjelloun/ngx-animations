@@ -37,6 +37,10 @@ describe('AnimIfDirective', () => {
     component = fixture.debugElement.componentInstance;
   });
 
+  it('should construct without errors', () => {
+    expect(new AnimIfDirective(null, null, null)).toBeTruthy();
+  });
+
   it('should not display the div when show is false', fakeAsync(() => {
     component.show = false;
     fixture.detectChanges();
