@@ -15,10 +15,9 @@ This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css
 *   Angular 8.x use ngx-animations 3.x
 *   Angular 7.x use ngx-animations 2.x
 
-
 ## Installing and importing NgxAnimations
 
-1.   Install `ngx-animations` :
+1   Install `ngx-animations` :
 
 ```bash
 npm install ngx-animations
@@ -30,7 +29,7 @@ Or
 yarn add ngx-animations
 ```
 
-2.   Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
+2   Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
