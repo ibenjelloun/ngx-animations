@@ -9,16 +9,16 @@
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-*  [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
-*  [Angular 9 beta version.](https://stackblitz.com/edit/ngx-animations-beta)
+*   [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
+*   [Angular 9 beta version.](https://stackblitz.com/edit/ngx-animations-beta)
+*   Angular 9.x use ngx-animations 4.x
+*   Angular 8.x use ngx-animations 3.x
+*   Angular 7.x use ngx-animations 2.x
 
-*  Angular 7.x use ngx-animations 2.x
-*  Angular 8.x use ngx-animations 3.x
-*  Angular 9.x use ngx-animations 4.x
 
 ## Installing and importing NgxAnimations
 
-1. Install `ngx-animations` :
+1.   Install `ngx-animations` :
 
 ```bash
 npm install ngx-animations
@@ -30,8 +30,7 @@ Or
 yarn add ngx-animations
 ```
 
-
-2. Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
+2.   Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -68,7 +67,7 @@ Use the `*animIf` directive to set the start and end animation :
 
 Create an `AnimationDefinition` instance for every animation you want to add :
 
-```
+```typescript
 const animationDefinition = new AnimationDefinition({}, [
   { background: 'blue', width: '25%', offset: 0.25 },
   { background: 'green', width: '100%', offset: 0.5 },
