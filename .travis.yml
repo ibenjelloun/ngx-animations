@@ -6,12 +6,11 @@ branches:
     - master
 before_script:
   - yarn global add @angular/cli
-  - yarn global add codecov
 script:
   - yarn build
   - yarn test-ci
-  - codecov
 notifications:
   email:
     on_failure: change
     on_success: change
+codecov: true

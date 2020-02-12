@@ -13,6 +13,7 @@
     "build": "ng build ngx-animations --prod",
     "test": "ng test ngx-animations --watch",
     "test-ci": "ng test ngx-animations",
+    "codecov": "codecov -t $CODECOV_TOKEN",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "format:fix": "pretty-quick --staged",
     "e2e": "ng e2e",
