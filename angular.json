@@ -45,7 +45,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -119,7 +118,7 @@
       "prefix": "libs/ngx-animations-demo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "libs/ngx-animations/tsconfig.lib.json",
             "project": "libs/ngx-animations/ng-package.json"
@@ -157,7 +156,6 @@
   },
   "cli": {
     "warnings": {
-      "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics",
