@@ -124,6 +124,72 @@ And play the animation :
 player.play();
 ```
 
+## Add routing transition animations
+
+[stackblitz example](https://stackblitz.com/edit/ngx-animations-routing)
+
+First add `animation` to routing `data` :
+
+```typescript
+{
+    path: "animals",
+    component: AnimalsComponent,
+    data: { animation: "AnimalsPage" }
+  },
+  {
+    path: "fruits",
+    component: FruitsComponent,
+    data: { animation: "FruitsPage" }
+  }
+```
+
+Then you can either use a generic value `* => *` for all the transitions :
+
+```typescript
+@Component({
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  animations: [
+    trigger("routeAnimation", [
+      buildRouteTransition({
+        stateChangeExpr: "* => *",
+        enter: animations.fadeIn(1000),
+        leave: animations.fadeOut(1000)
+      })
+    ])
+  ]
+})
+export class AppComponent {}
+
+```
+
+Or add a specific animation for each transition :
+
+```typescript
+@Component({
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  animations: [
+    trigger("routeAnimation", [
+      buildRouteTransition({
+        stateChangeExpr: "AnimalsPage => FruitsPage",
+        enter: animations.zoomInRight(500),
+        leave: animations.zoomOutLeft(200)
+      }),
+      buildRouteTransition({
+        stateChangeExpr: "FruitsPage => AnimalsPage",
+        enter: animations.zoomInLeft(500),
+        leave: animations.zoomOutRight(200)
+      })
+    ])
+  ]
+})
+export class AppComponent {}
+```
+
+
 ## List of animations
 
 bounce

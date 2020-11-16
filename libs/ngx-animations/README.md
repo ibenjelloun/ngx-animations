@@ -9,16 +9,15 @@
 
 This is an adaptation of the [Animate.css](https://daneden.github.io/animate.css/) animations using the @angular/animations library.
 
-*  [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
-*  [Angular 9 beta version.](https://stackblitz.com/edit/ngx-animations-beta)
-
-*  Angular 7.x use ngx-animations 2.x
-*  Angular 8.x use ngx-animations 3.x
-*  Angular 9.x use ngx-animations 4.x
+*   [You can find a demo here.](https://stackblitz.com/edit/ngx-animations)
+*   Angular 11.x use ngx-animations 5.x
+*   Angular 9.x use ngx-animations 4.x
+*   Angular 8.x use ngx-animations 3.x
+*   Angular 7.x use ngx-animations 2.x
 
 ## Installing and importing NgxAnimations
 
-1. Install `ngx-animations` :
+1   Install `ngx-animations` :
 
 ```bash
 npm install ngx-animations
@@ -30,8 +29,7 @@ Or
 yarn add ngx-animations
 ```
 
-
-2. Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
+2   Import the `BrowserAnimationsModule` and `NgxAnimationsModule` in your module :
 
 ```typescript
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -68,7 +66,7 @@ Use the `*animIf` directive to set the start and end animation :
 
 Create an `AnimationDefinition` instance for every animation you want to add :
 
-```
+```typescript
 const animationDefinition = new AnimationDefinition({}, [
   { background: 'blue', width: '25%', offset: 0.25 },
   { background: 'green', width: '100%', offset: 0.5 },
@@ -125,6 +123,72 @@ And play the animation :
 ```typescript
 player.play();
 ```
+
+## Add routing transition animations
+
+[stackblitz example](https://stackblitz.com/edit/ngx-animations-routing)
+
+First add `animation` to routing `data` :
+
+```typescript
+{
+    path: "animals",
+    component: AnimalsComponent,
+    data: { animation: "AnimalsPage" }
+  },
+  {
+    path: "fruits",
+    component: FruitsComponent,
+    data: { animation: "FruitsPage" }
+  }
+```
+
+Then you can either use a generic value `* => *` for all the transitions :
+
+```typescript
+@Component({
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  animations: [
+    trigger("routeAnimation", [
+      buildRouteTransition({
+        stateChangeExpr: "* => *",
+        enter: animations.fadeIn(1000),
+        leave: animations.fadeOut(1000)
+      })
+    ])
+  ]
+})
+export class AppComponent {}
+
+```
+
+Or add a specific animation for each transition :
+
+```typescript
+@Component({
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  animations: [
+    trigger("routeAnimation", [
+      buildRouteTransition({
+        stateChangeExpr: "AnimalsPage => FruitsPage",
+        enter: animations.zoomInRight(500),
+        leave: animations.zoomOutLeft(200)
+      }),
+      buildRouteTransition({
+        stateChangeExpr: "FruitsPage => AnimalsPage",
+        enter: animations.zoomInLeft(500),
+        leave: animations.zoomOutRight(200)
+      })
+    ])
+  ]
+})
+export class AppComponent {}
+```
+
 
 ## List of animations
 
