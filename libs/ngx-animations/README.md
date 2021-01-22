@@ -2,7 +2,6 @@
 [![Build Status](https://travis-ci.org/ibenjelloun/ngx-animations.svg?branch=master)](https://travis-ci.org/ibenjelloun/ngx-animations)
 [![codecov](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master/graph/badge.svg)](https://codecov.io/gh/ibenjelloun/ngx-animations/branch/master)
 [![Known Vulnerabilities](https://snyk.io/test/github/ibenjelloun/ngx-animations/badge.svg?targetFile=libs/ngx-animations/package.json)](https://snyk.io/test/github/ibenjelloun/ngx-animations?targetFile=libs/ngx-animations/package.json)
-[![Dependencies](https://david-dm.org/ibenjelloun/ngx-animations.svg)](https://david-dm.org/ibenjelloun/ngx-animations?view=list)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ibenjelloun/ngx-animations/blob/master/LICENSE)
 
 # NgxAnimations
@@ -161,7 +160,6 @@ Then you can either use a generic value `* => *` for all the transitions :
   ]
 })
 export class AppComponent {}
-
 ```
 
 Or add a specific animation for each transition :
@@ -189,6 +187,13 @@ Or add a specific animation for each transition :
 export class AppComponent {}
 ```
 
+Finally link the animation definition to the template :
+
+```
+<main [@routeAnimation]="o.activatedRouteData.animation">
+	<router-outlet #o="outlet"></router-outlet>
+</main>
+```
 
 ## List of animations
 
@@ -268,3 +273,11 @@ hinge
 jackInTheBox
 rollIn
 rollOut
+backInDown
+backInLeft
+backInRight
+backInUp
+backOutDown
+backOutLeft
+backOutRight
+backOutUp

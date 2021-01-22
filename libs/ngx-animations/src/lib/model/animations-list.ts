@@ -76,7 +76,15 @@ import {
   hinge,
   jackInTheBox,
   rollIn,
-  rollOut
+  rollOut,
+  backInDown,
+  backInLeft,
+  backInRight,
+  backInUp,
+  backOutDown,
+  backOutLeft,
+  backOutRight,
+  backOutUp
 } from '../animations';
 import {
   style,
@@ -175,5 +183,13 @@ export const animations = {
   hinge: stylesToAnimation(hinge),
   jackInTheBox: stylesToAnimation(jackInTheBox),
   rollIn: stylesToAnimation(rollIn),
-  rollOut: stylesToAnimation(rollOut)
+  rollOut: stylesToAnimation(rollOut),
+  backInDown: stylesToAnimation(backInDown),
+  backInLeft: stylesToAnimation(backInLeft),
+  backInRight: stylesToAnimation(backInRight),
+  backInUp: stylesToAnimation(backInUp),
+  backOutDown: stylesToAnimation(backOutDown),
+  backOutLeft: stylesToAnimation(backOutLeft),
+  backOutRight: stylesToAnimation(backOutRight),
+  backOutUp: stylesToAnimation(backOutUp)
 };

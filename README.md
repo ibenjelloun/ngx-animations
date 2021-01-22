@@ -273,3 +273,11 @@ hinge
 jackInTheBox
 rollIn
 rollOut
+backInDown
+backInLeft
+backInRight
+backInUp
+backOutDown
+backOutLeft
+backOutRight
+backOutUp

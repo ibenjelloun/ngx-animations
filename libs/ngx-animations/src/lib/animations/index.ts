@@ -13,3 +13,5 @@ export * from './slide-exit';
 export * from './specials';
 export * from './zoom-entrance';
 export * from './zoom-exit';
+export * from './back-entrance';
+export * from './back-exit';
