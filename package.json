@@ -40,7 +40,7 @@
     "@angular-devkit/schematics": "^11.0.1",
     "@angular/animations": "11.0.0",
     "@angular/cdk": "^11.0.0",
-    "@angular/common": "11.0.0",
+    "@angular/common": "19.2.16",
     "@angular/compiler": "11.0.0",
     "@angular/core": "11.0.0",
     "@angular/forms": "11.0.0",
